@@ -86,4 +86,4 @@ ENV PRE_COMMANDS="source /opt/rh/devtoolset-8/enable && \
 # import logging libraries
 COPY ./docker/.logging-helpers /tmp/.helpers
 # runtime instructions
-CMD /workdir/.cicd/docker/entrypoint.sh
+CMD bash -c "ccache --version; which ccache; ls -la $(which ccache)"

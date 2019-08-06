@@ -85,4 +85,4 @@ ENV CMAKE_EXTRAS="$CMAKE_EXTRAS -DCMAKE_TOOLCHAIN_FILE='/tmp/pinned_toolchain.cm
 # import logging libraries
 COPY ./docker/.logging-helpers /tmp/.helpers
 # runtime instructions
-CMD /workdir/.cicd/docker/entrypoint.sh
+CMD bash -c "ccache --version; which ccache; ls -la $(which ccache)"

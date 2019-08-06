@@ -70,4 +70,4 @@ ENV CMAKE_EXTRAS="-DCMAKE_CXX_COMPILER='clang++' -DCMAKE_C_COMPILER='clang'"
 # import logging libraries
 COPY ./docker/.logging-helpers /tmp/.helpers
 # runtime instructions
-CMD /workdir/.cicd/docker/entrypoint.sh
+CMD bash -c "ccache --version; which ccache; ls -la $(which ccache)"
